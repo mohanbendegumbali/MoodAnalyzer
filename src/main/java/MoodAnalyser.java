@@ -1,22 +1,10 @@
-public class MoodAnalyser {
-    private String message;
-
-    // Constructor
-    public MoodAnalyser() {
+public class MoodAnalyser extends Exception{
+    public MoodAnalyser Exception(String message, Exception_Type type) {
+        super(message);
     }
 
-    public MoodAnalyser(String message) {
-        this.message = message;
+    public enum Exception_Type {
+        NULL, EMPTY;
     }
 
-    public String analyseMood() {
-        try {
-            if (this.message.contains("Sad"))
-                return "SAD";
-            else
-                return "HAPPY";
-        } catch (NullPointerException e) {
-            return "HAPPY";
-        }
-    }
 }

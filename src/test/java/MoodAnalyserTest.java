@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import static org.junit.Assert.assertSame;
 
-public class MoodAnalyserTest {
+public class MoodAnalyzerTest {
     //Test case for Sad mood
     @Test
     public void given_SadMood_Should_Return_SAD() {
@@ -19,6 +19,13 @@ public class MoodAnalyserTest {
     @Test
     public void given_AnyMood_Should_Return_HAPPY() {
         MoodAnalyser moodAnalyser = new MoodAnalyser("I am in Happy Mood");
+        String mood = moodAnalyser.analyseMood();
+        assertSame("HAPPY", mood);
+    }
+
+    @Test
+    public void given_NULLMood_Should_Return_HAPPY() {
+        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
         String mood = moodAnalyser.analyseMood();
         assertSame("HAPPY", mood);
     }
