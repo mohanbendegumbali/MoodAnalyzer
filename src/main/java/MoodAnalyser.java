@@ -1,25 +1,14 @@
 public class MoodAnalyser {
-    private String message;
 
-    //Default Constructor
-    public MoodAnalyser(){
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    //Parameterized Constructor
-    public MoodAnalyser(String message) {
-        this.message = message;
-    }
-
-    public String analyseMood() {
+    public String analyseMood(String message) {
         if (message.contains("Sad")){
             return "SAD";
         }
-        else {
+        else if (message.contains("Happy")) {
             return "HAPPY";
+        }
+        else {
+            return "UNKNOWN";
         }
     }
 }
